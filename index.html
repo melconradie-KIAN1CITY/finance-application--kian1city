@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kia N1 City - Finance Application</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            text-align: center;
+            color: #c01a2c; /* Kia Red */
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .radio-group, .checkbox-group {
+            margin-bottom: 15px;
+        }
+        .radio-group label, .checkbox-group label {
+            font-weight: normal;
+            margin-right: 15px;
+        }
+        button {
+            background-color: #c01a2c;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #a01725;
+        }
+        .form-section {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+        .form-section:last-child {
+            border-bottom: none;
+        }
+        .form-section h3 {
+            color: #333;
+            border-bottom: 2px solid #c01a2c;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Kia N1 City</h1>
+        <h2>Finance Application</h2>
+
+        <form id="finance-form" action="your-server-side-script.php" method="POST">
+
+            <div class="form-section">
+                <h3>Application Options</h3>
+                <div class="radio-group">
+                    <label><input type="radio" name="application_option" value="assistance" checked> I need assistance</label>
+                    <label><input type="radio" name="application_option" value="full_application"> I want to complete the full application now</label>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>Contact Preference</h3>
+                <div class="radio-group">
+                    <label><input type="radio" name="contact_preference" value="email" checked> Email me</label>
+                    <label><input type="radio" name="contact_preference" value="phone"> Phone me</label>
+                    <label><input type="radio" name="contact_preference" value="whatsapp"> WhatsApp Me</label>
+                </div>
+                <label for="preferred_dealership">Preferred Dealership:</label>
+                <select id="preferred_dealership" name="preferred_dealership">
+                    <option value="Kia N1 City">Kia N1 City</option>
+                </select>
+                <label for="sales_executive">Which sales executive assisted you:</label>
+                <input type="text" id="sales_executive" name="sales_executive">
+            </div>
+
+            <div class="form-section">
+                <h3>Vehicle Details</h3>
+                <label for="make">Make:</label>
+                <select id="make" name="make">
+                    <option value="Kia">Kia</option>
+                </select>
+                <label for="model">Model:</label>
+                <select id="model" name="model">
+                    <option value="CARNIVAL">CARNIVAL</option>
+                    <option value="K 2500">K 2500</option>
+                    <option value="K 2700">K 2700</option>
+                    <option value="PEGAS">PEGAS</option>
+                    <option value="PICANTO">PICANTO</option>
+                    <option value="SELTOS">SELTOS</option>
+                    <option value="SONET">SONET</option>
+                    <option value="SORENTO">SORENTO</option>
+                    <option value="SPORTAGE">SPORTAGE</option>
+                </select>
+                <label for="amount_to_finance">Amount to Finance:</label>
+                <input type="text" id="amount_to_finance" name="amount_to_finance">
+            </div>
+
+            <div class="form-section">
+                <h3>Selected Vehicle Details</h3>
+                <label for="selected_make">Make:</label>
+                <input type="text" id="selected_make" name="selected_make">
+                <label for="selected_model">Model:</label>
+                <input type="text" id="selected_model" name="selected_model">
+                <label for="retail_value">Retail Value:</label>
+                <input type="text" id="retail_value" name="retail_value">
+                <label for="condition">Condition:</label>
+                <input type="text" id="condition" name="condition">
+                <label for="stock_number">Stock Number:</label>
+                <input type="text" id="stock_number" name="stock_number">
+                <label for="mm_code">M&M Code:</label>
+                <input type="text" id="mm_code" name="mm_code">
+            </div>
+
+            <div class="form-section">
+                <h3>Applicant Details</h3>
+                <label for="title">Title:</label>
+                <select id="title" name="title">
+                    <option value="Not Selected">Not Selected</option>
+                    <option value="Advocate">Advocate</option>
+                    <option value="Doctor">Doctor</option>
+                    <option value="Mr">Mr</option>
+                    <option value="Miss">Miss</option>
+                    <option value="Mrs">Mrs</option>
+                    <option value="Reverend">Reverend</option>
+                    <option value="Professor">Professor</option>
+                </select>
+                <label for="first_name">First Name:</label>
+                <input type="text" id="first_name" name="first_name" required>
+                <label for="middle_name">Middle Name:</label>
+                <input type="text" id="middle_name" name="middle_name">
+                <label for="surname">Surname:</label>
+                <input type="text" id="surname" name="surname" required>
+                <label for="id_number">ID Number:</label>
+                <input type="text" id="id_number" name="id_number" required>
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+                <label for="email">E-Mail Address:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="mobile_number">Mobile Number:</label>
+                <input type="text" id="mobile_number" name="mobile_number" required>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="drivers_license" value="yes"> I have a valid driver's license</label>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>Customer Consent</h3>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="customer_consent" value="agreed" required> I agree that Kia N1 City, or its service providers, may: do a credit check in assessing my finance application. do an automated check of your proof of address for verification purposes. request my bank statements in respect of the bank account/s listed on the application. request copies of my payslips from my employer to confirm my employment details. share my information with insurance brokers.</label>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>National Credit Act</h3>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="nca_consent" value="agreed" required> By continuing with the application process I confirm that: I am not a minor. I have never been declared mentally unfit by a court. I am not subject to an Administration Order. I do not have any current application pending for debt restructuring or alleviation. I do not have any current debt re-arrangement in existence. I have not previously applied for a debt re-arrangement. I am not under sequestration. I do not have applications pending for credit, nor open quotations as envisaged in section 92 of the National Credit Act.</label>
+                </div>
+            </div>
+
+            <button type="submit">Submit Application</button>
+        </form>
+
+        <button onclick="saveAsPdf()">Save as PDF</button>
+    </div>
+
+    <script>
+        function saveAsPdf() {
+            window.print();
+        }
+    </script>
+
+</body>
+</html>

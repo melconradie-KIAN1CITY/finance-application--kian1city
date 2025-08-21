@@ -1,0 +1,25 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // F&I Manager's Email Addresses
+    $to = "manager1@kian1city.co.za, manager2@kian1city.co.za";
+    $subject = "New Finance Application from " . htmlspecialchars($_POST['first_name']) . " " . htmlspecialchars($_POST['surname']);
+
+    $message = "A new finance application has been submitted:\n\n";
+
+    // Loop through all form data and append it to the message
+    foreach ($_POST as $key => $value) {
+        $message .= htmlspecialchars($key) . ": " . htmlspecialchars($value) . "\n";
+    }
+
+    $headers = "From: webmaster@kian1city.co.za"; // Replace with a valid from email address
+
+    // Send the email
+    if (mail($to, $subject, $message, $headers)) {
+        echo "Application submitted successfully!";
+        // You can redirect to a thank you page here
+        // header("Location: thank-you.html");
+    } else {
+        echo "Failed to submit application. Please try again later.";
+    }
+}
+?>
